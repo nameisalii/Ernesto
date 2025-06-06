@@ -114,7 +114,7 @@
         }
 
         .hero-text h1 {
-            font-size: 2.5rem; /* Reduced from 3rem to make it smaller */
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: bold;
         }
@@ -144,7 +144,7 @@
 
         .hero-image {
             flex: 1;
-            background: url('https://edwardsairenterprise.com/wp-content/uploads/2017/01/Installing-Clean-Air-Filter-e1565963842380.jpg') center/cover no-repeat; /* Updated image for better relevance */
+            background: url('https://ca.coit.com/sites/default/files/styles/coit_card_ph_1x/public/media/2022-09/coits-certified-cleaning-specialists-for-HVAC-and-air-ducts.png.webp?itok=rGyKqm1n') center/cover no-repeat;
             height: 100%;
         }
 
@@ -194,7 +194,7 @@
         .about-image {
             width: 100%;
             height: 250px;
-            background: url('https://www.airductcleaning-oakland.com/sites/airductcleaning-oakland/UserContent/images/iStock_000028463016_XXXLarge.jpg') center/cover no-repeat;
+            background: url('https://dezielhvac.com/wp-content/uploads/2024/06/how-much-does-air-duct-cleaning-cost-1024x683.jpg') center/cover no-repeat;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
@@ -297,6 +297,146 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
+        /* Products Section */
+        .products {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: #2c5530;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .product-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-card select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .product-card .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.75rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Payment Section */
+        .payment {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cart-summary {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-summary h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c5530;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-align: right;
+            color: #2c5530;
+        }
+
+        .payment-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
         /* Reviews Section */
         .reviews-grid {
             display: grid;
@@ -367,6 +507,7 @@
         }
 
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 1rem;
@@ -377,6 +518,7 @@
         }
 
         .form-group input:focus,
+        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
@@ -422,7 +564,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-menu {
-                flex-direction: column;
+                flex-direction列: column;
                 gap: 1rem;
             }
 
@@ -440,7 +582,7 @@
             }
 
             .hero-text h1 {
-                font-size: 1.8rem; /* Further reduced for mobile */
+                font-size: 1.8rem;
             }
 
             .hero-text p {
@@ -461,11 +603,11 @@
                 font-size: 2rem;
             }
 
-            .services-grid {
+            .services-grid, .products-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-form {
+            .contact-form, .payment-form {
                 margin: 0 1rem;
                 padding: 2rem;
             }
@@ -492,11 +634,12 @@
 <body>
     <header>
         <nav>
-            <a href="#home" class="logo">Elaman Duct Care</a>
+            <a href="#home" class="logo">Ernesto Duct Care</a>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
                 <li><a href="#contact">Contact Now</a></li>
             </ul>
         </nav>
@@ -505,7 +648,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Elaman Duct Care Cleaning and Indoor Air Quality Solutions</h1>
+                <h1>Air Duct Cleaning and Indoor Air Quality Solutions</h1>
                 <p>Transform your home's air quality with our expert air duct cleaning and innovative purification solutions. Enjoy fresh, clean air all year round.</p>
                 <a href="#contact" class="book-btn">Book Now</a>
             </div>
@@ -517,7 +660,7 @@
         <h2 class="section-title">About Us</h2>
         <div class="about-content">
             <div class="about-text">
-                Elaman Duct Care provides expert home cleaning and duct maintenance services. Our team delivers spotless results and improves air quality using eco-friendly products. Trust us for reliable, affordable, and high-quality cleaning tailored to your needs!
+                Ernesto Duct Care provides expert home cleaning and duct maintenance services. Our team delivers spotless results and improves air quality using eco-friendly products. Trust us for reliable, affordable, and high-quality cleaning tailored to your needs!
             </div>
             <div class="about-image"></div>
         </div>
@@ -528,7 +671,7 @@
         <div class="services-grid">
             <div class="service-card fade-in">
                 <div class="service-icon">
-                    <img src="https://www.airductcleaning-oakland.com/sites/airductcleaning-oakland/UserContent/images/iStock_000028463016_XXXLarge.jpg">
+                    <img src="https://cyclonepro.com/wp-content/uploads/2020/08/air-duct-cleaning-dallas.jpg" alt="Deep House Cleaning">
                     <span>Deep House Cleaning</span>
                 </div>
                 <h3>Deep House Cleaning</h3>
@@ -536,7 +679,7 @@
             </div>
             <div class="service-card fade-in">
                 <div class="service-icon">
-                    <img src="https://saiairductclean.com/wp-content/uploads/2024/08/c8c08bae-4b19-469c-813b-59e4c9898f05.jpg" alt="Air Duct Cleaning">
+                    <img src="https://www.superiorairduct.com/wp-content/uploads/2021/07/Commerical-Air-Duct-cleaning.jpeg" alt="Air Duct Cleaning">
                     <span>Air Duct Cleaning</span>
                 </div>
                 <h3>Air Duct Cleaning</h3>
@@ -544,7 +687,7 @@
             </div>
             <div class="service-card fade-in">
                 <div class="service-icon">
-                    <img src="https://lirp.cdn-website.com/562aca7d/dms3rep/multi/opt/GettyImages-478089373-640w.jpg" alt="Carpet Cleaning">
+                    <img src="https://ca.coit.com/sites/default/files/styles/coit_card_ph_1x/public/media/2022-09/coits-certified-cleaning-specialists-for-HVAC-and-air-ducts.png.webp?itok=rGyKqm1n" alt="Carpet Cleaning">
                     <span>Carpet Cleaning</span>
                 </div>
                 <h3>Carpet Cleaning</h3>
@@ -552,7 +695,7 @@
             </div>
             <div class="service-card fade-in">
                 <div class="service-icon">
-                    <img src="https://static.wixstatic.com/media/0e068c_2bf79add4fbc4ffb9d158060f53800db~mv2.jpg/v1/fill/w_280,h_210,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/33131659-af13-4426-9896-084312229be6_edi.jpg" alt="Upholstery Cleaning">
+                    <img src="https://atmosphereaircare.com/wp-content/uploads/2022/02/Clean-Air-Duct-Treatment-Atmosphere-Air-Care.jpg" alt="Upholstery Cleaning">
                     <span>Upholstery Cleaning</span>
                 </div>
                 <h3>Upholstery Cleaning</h3>
@@ -560,7 +703,7 @@
             </div>
             <div class="service-card fade-in">
                 <div class="service-icon">
-                    <img src="https://atmosphereaircare.com/wp-content/uploads/2022/02/Clean-Air-Duct-Treatment-Atmosphere-Air-Care.jpg" alt="Kitchen Deep Cleaning">
+                    <img src="https://vareliancehomecomfort.com/wp-content/uploads/2022/04/Untitled-design-13-940x675.png" alt="Kitchen Deep Cleaning">
                     <span>Kitchen Deep Cleaning</span>
                 </div>
                 <h3>Kitchen Deep Cleaning</h3>
@@ -568,7 +711,7 @@
             </div>
             <div class="service-card fade-in">
                 <div class="service-icon">
-                    <img src="https://espcleaning.sg/wp-content/uploads/unnamed-9-2.jpg" alt="Bathroom Sanitization">
+                    <img src="https://ductcare.ca/wp-content/uploads/2023/12/air-duct-cleaning.jpeg" alt="Bathroom Sanitization">
                     <span>Bathroom Sanitization</span>
                 </div>
                 <h3>Bathroom Sanitization</h3>
@@ -585,19 +728,115 @@
         </div>
     </section>
 
+    <section id="products" class="products fade-in">
+        <h2 class="section-title">Our Air Purifiers</h2>
+        <div class="products-grid">
+            <div class="product-card fade-in">
+                <img src="https://i5.walmartimages.com/seo/Dyson-Purifier-Hot-Cool-Gen1-HP10-White-White-New_7ed4ae55-4c87-47b9-a2c4-72f118ec9f72.202b67373d9eec9374f0b66d6341be69.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" alt="Dyson Purifier Cool TP10">
+                <h3>Dyson Purifier Cool TP10</h3>
+                <p>HEPA H13 filter captures 99.97% of particles as small as 0.3 microns. Cools and purifies with Air Multiplier™ technology.</p>
+                <div class="price">$549.99</div>
+                <select name="color-tp10" class="product-option">
+                    <option value="white">White/Silver</option>
+                    <option value="black">Black/Nickel</option>
+                </select>
+                <button class="add-to-cart" data-product="Dyson Purifier Cool TP10" data-price="549.99">Add to Cart</button>
+            </div>
+            <div class="product-card fade-in">
+                <img src="https://helios-i.mashable.com/imagery/articles/02pUF2TepvDzKR7534bJ5sa/hero-image.fill.size_1248x702.v1701446345.png" alt="Dyson Purifier Hot+Cool Gen1">
+                <h3>Dyson Purifier Hot+Cool Gen1</h3>
+                <p>HEPA H13 filter, purifies, heats, and cools. Auto-senses pollutants and projects purified air up to 32ft.</p>
+                <div class="price">$649.99</div>
+                <select name="color-hotcool" class="product-option">
+                    <option value="white">White/Silver</option>
+                    <option value="black">Black/Nickel</option>
+                </select>
+                <button class="add-to-cart" data-product="Dyson Purifier Hot+Cool Gen1" data-price="649.99">Add to Cart</button>
+            </div>
+            <div class="product-card fade-in">
+                <img src="https://media.wired.com/photos/5ea766b76ec564000891cda7/master/w_1600%2Cc_limit/Gear-Dyson-whole-cutaway---credit-best-buy.jpg" alt="Dyson Purifier Humidify+Cool">
+                <h3>Dyson Purifier Humidify+Cool</h3>
+                <p>HEPA H13 purifier, humidifier, and fan. Hygienically humidifies and captures 99.97% of pollutants.</p>
+                <div class="price">$799.99</div>
+                <select name="color-humidify" class="product-option">
+                    <option value="white">White/Silver</option>
+                    <option value="black">Black/Nickel</option>
+                </select>
+                <button class="add-to-cart" data-product="Dyson Purifier Humidify+Cool" data-price="799.99">Add to Cart</button>
+            </div>
+            <div class="product-card fade-in">
+                <img src="https://aircleaners.com/cdn/shop/products/AustinHealthmateHM400_AbsoluteAirCleaners4_535x.jpg?v=1670875504" alt="Austin Air HealthMate">
+                <h3>Austin Air HealthMate</h3>
+                <p>Medical-grade HEPA and activated carbon filter for pollen, dust, and odors. Covers up to 750 sq. ft.</p>
+                <div class="price">$714.99</div>
+                <select name="color-healthmate" class="product-option">
+                    <option value="sandstone">Sandstone</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+                <button class="add-to-cart" data-product="Austin Air HealthMate" data-price="714.99">Add to Cart</button>
+            </div>
+            <div class="product-card fade-in">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIGlpKyiCVO2RFhXE89Mwbf-AJ6uzGnHgNow&s" alt="Austin Air HealthMate Plus">
+                <h3>Austin Air HealthMate Plus</h3>
+                <p>Enhanced HEPA and carbon/zeolite filter with potassium iodide for VOCs and chemicals. Covers up to 750 sq. ft.</p>
+                <div class="price">$854.99</div>
+                <select name="color-healthmateplus" class="product-option">
+                    <option value="sandstone">Sandstone</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+                <button class="add-to-cart" data-product="Austin Air HealthMate Plus" data-price="854.99">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="payment" class="payment fade-in">
+        <h2 class="section-title">Checkout</h2>
+        <div class="cart-summary">
+            <h3>Cart Summary</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+        </div>
+        <form class="payment-form" id="paymentForm">
+            <h3>Payment Information</h3>
+            <div class="form-group">
+                <label for="card-number">Card Number *</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="card-name">Name on Card *</label>
+                <input type="text" id="card-name" name="card-name" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date *</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV *</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+            <div class="form-group">
+                <label for="billing-address">Billing Address *</label>
+                <textarea id="billing-address" name="billing-address" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Complete Purchase</button>
+        </form>
+    </section>
+
     <section id="reviews">
         <h2 class="section-title">Customer Reviews</h2>
         <div class="reviews-grid">
             <div class="review-card fade-in">
                 <div class="review-text">
-                    Outstanding service from Elaman Duct Care! They efficiently cleaned and sanitized all our vents, removing all dust and dirt. Their attention to detail was impressive. Highly recommend!
+                    Outstanding service from Ernesto Duct Care! They efficiently cleaned and sanitized all our vents, removing all dust and dirt. Their attention to detail was impressive. Highly recommend!
                 </div>
                 <div class="review-author">Sarah Johnson</div>
                 <div class="stars">★★★★★</div>
             </div>
             <div class="review-card fade-in">
                 <div class="review-text">
-                    Elaman Duct Care transformed our home! The deep cleaning was thorough, and the air ducts are spotless. Professional and eco-friendly service!
+                    Ernesto Duct Care transformed our home! The deep cleaning was thorough, and the air ducts are spotless. Professional and eco-friendly service!
                 </div>
                 <div class="review-author">Michael Lee</div>
                 <div class="stars">★★★★★</div>
@@ -640,11 +879,49 @@
     </section>
 
     <footer>
-        <p>Elaman Duct Care - Elaman LLC</p>
+        <p>Ernesto Duct Care - Elaman LLC</p>
         <p>12159 Hart St, North Hollywood, CA 91605</p>
     </footer>
 
     <script>
+        // Cart functionality
+        let cart = [];
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+
+            let total = 0;
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `<span>${item.name} (${item.color})</span><span>$${item.price}</span>`;
+                cartItems.appendChild(itemElement);
+                total += parseFloat(item.price);
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                const price = this.getAttribute('data-price');
+                const select = this.previousElementSibling;
+                const color = select.options[select.selectedIndex].text;
+
+                cart.push({
+                    name: productName,
+                    price: price,
+                    color: color
+                });
+
+                updateCart();
+                alert(`${productName} (${color}) added to cart!`);
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -677,18 +954,37 @@
             observer.observe(el);
         });
 
-        // Form submission handling
+        // Contact form submission handling
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Simulate form submission
             alert('Thank you for your request! We will contact you within 24 hours to schedule your cleaning service.');
+            this.reset();
+        });
+
+        // Payment form submission handling
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Reset form
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            if (!data['card-number'] || !data['card-name'] || !data['expiry-date'] || !data.cvv || !data['billing-address']) {
+                alert('Please fill in all required payment fields.');
+                return;
+            }
+
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add products before checking out.');
+                return;
+            }
+            
+            alert('Thank you for your purchase! Your order has been processed.');
+            cart = [];
+            updateCart();
             this.reset();
         });
 
