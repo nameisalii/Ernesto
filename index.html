@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ernesto Duct Care - Professional Cleaning Services</title>
+    <title>Ernesto Duct Care - Professional Home Cleaning Services</title>
     <style>
         * {
             margin: 0;
@@ -15,241 +15,189 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* Header Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        nav {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
         }
 
         .logo {
-            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: #2c5530;
-            text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .logo:hover {
-            color: #4a7c59;
+        .logo::before {
+            content: "🏠";
+            margin-right: 10px;
+            font-size: 2rem;
         }
 
-        .nav-menu {
+        nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .nav-menu a {
+        nav a {
+            color: white;
             text-decoration: none;
-            color: #333;
             font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
         }
 
-        .nav-menu a:hover {
-            color: #2c5530;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #2c5530;
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
+            background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f8ff" width="1200" height="600"/><circle fill="%23e6f3ff" cx="200" cy="150" r="80"/><circle fill="%23ddeeff" cx="800" cy="300" r="120"/><circle fill="%23e6f3ff" cx="1000" cy="100" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            display: flex;
-            max-width: 1200px;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-text {
-            flex: 1;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 2rem;
+            text-align: center;
             color: white;
-            text-align: left;
+            margin-top: 80px;
         }
 
-        .hero-text h1 {
-            font-size: 2.5rem; /* Reduced from 3rem to make it smaller */
+        .hero-content h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            font-weight: bold;
+            animation: fadeInUp 1s ease;
         }
 
-        .hero-text p {
-            font-size: 1.2rem;
+        .hero-quote {
+            font-size: 1.3rem;
+            font-style: italic;
             margin-bottom: 2rem;
-            max-width: 400px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
         }
 
-        .hero-text .book-btn {
-            background-color: #007bff;
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            width: 120px;
-            text-align: center;
+            padding: 15px 30px;
             text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
         }
 
-        .hero-text .book-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .hero-image {
-            flex: 1;
-            background: url('https://edwardsairenterprise.com/wp-content/uploads/2017/01/Installing-Clean-Air-Filter-e1565963842380.jpg') center/cover no-repeat; /* Updated image for better relevance */
-            height: 100%;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 5rem 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #2c5530;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
 
         /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
         }
 
-        .about-text {
-            font-size: 1.2rem;
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: #666;
         }
 
         .about-image {
-            width: 100%;
-            height: 250px;
-            background: url('https://www.airductcleaning-oakland.com/sites/airductcleaning-oakland/UserContent/images/iStock_000028463016_XXXLarge.jpg') center/cover no-repeat;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            text-align: center;
         }
 
-        .about-image:hover {
-            transform: translateY(-5px);
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         /* Services Section */
         .services {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 5rem 0;
+            padding: 100px 0;
+            background: white;
+        }
+
+        .services h2 {
             text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .service-card {
             background: white;
-            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .service-card h3 {
-            color: #2c5530;
-            margin-bottom: 1rem;
             font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
         }
 
         .service-card p {
@@ -257,102 +205,140 @@
             line-height: 1.6;
         }
 
-        .service-icon {
-            width: 100%;
-            height: 150px;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: #f8f9fa;
         }
 
-        .service-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .service-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5));
-            border-radius: 10px;
-            z-index: 1;
-        }
-
-        .service-icon span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 0.9rem;
+        .products h2 {
             text-align: center;
-            z-index: 2;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
         }
 
-        /* Reviews Section */
-        .reviews-grid {
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
-        .review-card {
+        .product-card {
             background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-card select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .product-card .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Payment Section */
+        .payment {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .payment h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .cart-summary {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            background: #f8f9fa;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .review-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .review-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: #667eea;
-            line-height: 1;
-        }
-
-        .review-text {
+        .cart-summary h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            font-style: italic;
-            color: #555;
-            line-height: 1.6;
         }
 
-        .review-author {
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-total {
             font-weight: bold;
-            color: #2c5530;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-align: right;
         }
 
-        .stars {
-            color: #ffd700;
-            margin-top: 0.5rem;
-        }
-
-        /* Contact Form */
-        .contact-form {
+        .payment-form {
             max-width: 600px;
             margin: 0 auto;
             background: white;
             padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .form-group {
@@ -362,94 +348,149 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: bold;
             color: #333;
         }
 
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
             font-size: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.3s ease;
         }
 
         .form-group input:focus,
+        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
         .form-group textarea {
+            height: 120px;
             resize: vertical;
-            min-height: 120px;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            padding: 15px;
+            border-radius: 10px;
             font-size: 1.1rem;
-            font-weight: 500;
+            font-weight: bold;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .reviews h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .reviewer-name {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         /* Footer */
         footer {
-            background: #2c5530;
+            background: #333;
             color: white;
             text-align: center;
             padding: 2rem 0;
-            font-size: 0.9rem;
         }
 
-        footer p {
-            margin: 0.5rem 0;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-menu {
+            .header-content {
                 flex-direction: column;
                 gap: 1rem;
             }
 
-            .hero {
-                height: 80vh;
+            nav ul {
+                gap: 1rem;
             }
 
-            .hero-content {
-                flex-direction: column;
-            }
-
-            .hero-text {
-                padding: 1rem;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 1.8rem; /* Further reduced for mobile */
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-
-            .hero-image {
-                height: 40vh;
-                width: 100%;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
             .about-content {
@@ -457,194 +498,299 @@
                 text-align: center;
             }
 
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .services-grid {
+            .services-grid, .products-grid {
                 grid-template-columns: 1fr;
             }
-
-            .contact-form {
-                margin: 0 1rem;
-                padding: 2rem;
-            }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animation for scroll-triggered elements */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <nav>
-            <a href="#home" class="logo">Elaman Duct Care</a>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact Now</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Ernesto Duct Care</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Elaman Duct Care Cleaning and Indoor Air Quality Solutions</h1>
-                <p>Transform your home's air quality with our expert air duct cleaning and innovative purification solutions. Enjoy fresh, clean air all year round.</p>
-                <a href="#contact" class="book-btn">Book Now</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ernesto Duct Care</h1>
+                <p class="hero-quote">"A clean home is a happy home - let us make yours sparkle!"</p>
+                <a href="#contact" class="cta-button">Book Now</a>
             </div>
-            <div class="hero-image"></div>
         </div>
     </section>
 
-    <section id="about" class="fade-in">
-        <h2 class="section-title">About Us</h2>
-        <div class="about-content">
-            <div class="about-text">
-                Elaman Duct Care provides expert home cleaning and duct maintenance services. Our team delivers spotless results and improves air quality using eco-friendly products. Trust us for reliable, affordable, and high-quality cleaning tailored to your needs!
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Our Company</h2>
+                    <p>Ernesto Duct Care provides expert home cleaning and duct maintenance services. Our team delivers spotless results and improves air quality using eco-friendly products. Trust us for reliable, affordable, and high-quality cleaning tailored to your needs!</p>
+                </div>
+                <div class="about-image">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect fill='%23f0f8ff' width='400' height='300'/><rect fill='%23667eea' x='50' y='50' width='300' height='200' rx='20'/><rect fill='%23ffffff' x='70' y='70' width='80' height='60' rx='5'/><rect fill='%23ffffff' x='170' y='70' width='80' height='60' rx='5'/><rect fill='%23ffffff' x='270' y='70' width='60' height='60' rx='5'/><rect fill='%23ffffff' x='70' y='150' width='260' height='80' rx='5'/><text x='200' y='280' text-anchor='middle' fill='%23333' font-family='Arial' font-size='14'>Professional Cleaning Services</text></svg>" alt="Professional Cleaning Services">
+                </div>
             </div>
-            <div class="about-image"></div>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <img src="https://www.airductcleaning-oakland.com/sites/airductcleaning-oakland/UserContent/images/iStock_000028463016_XXXLarge.jpg">
-                    <span>Deep House Cleaning</span>
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Deep House Cleaning</h3>
+                    <p>Comprehensive cleaning of all living spaces, including dusting, vacuuming, and sanitizing surfaces for a spotless home.</p>
                 </div>
-                <h3>Deep House Cleaning</h3>
-                <p>Comprehensive cleaning of all living spaces, including dusting, vacuuming, and sanitizing surfaces for a spotless home.</p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <img src="https://saiairductclean.com/wp-content/uploads/2024/08/c8c08bae-4b19-469c-813b-59e4c9898f05.jpg" alt="Air Duct Cleaning">
-                    <span>Air Duct Cleaning</span>
+                <div class="service-card">
+                    <div class="service-icon">🌬️</div>
+                    <h3>Air Duct Cleaning</h3>
+                    <p>Professional removal of dust, debris, and allergens from HVAC systems to improve indoor air quality and system efficiency.</p>
                 </div>
-                <h3>Air Duct Cleaning</h3>
-                <p>Professional removal of dust, debris, and allergens from HVAC systems to improve indoor air quality and system efficiency.</p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <img src="https://lirp.cdn-website.com/562aca7d/dms3rep/multi/opt/GettyImages-478089373-640w.jpg" alt="Carpet Cleaning">
-                    <span>Carpet Cleaning</span>
+                <div class="service-card">
+                    <div class="service-icon">🧽</div>
+                    <h3>Carpet Cleaning</h3>
+                    <p>Thorough steam cleaning and stain removal to refresh and restore carpets, leaving them clean and vibrant.</p>
                 </div>
-                <h3>Carpet Cleaning</h3>
-                <p>Thorough steam cleaning and stain removal to refresh and restore carpets, leaving them clean and vibrant.</p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <img src="https://static.wixstatic.com/media/0e068c_2bf79add4fbc4ffb9d158060f53800db~mv2.jpg/v1/fill/w_280,h_210,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/33131659-af13-4426-9896-084312229be6_edi.jpg" alt="Upholstery Cleaning">
-                    <span>Upholstery Cleaning</span>
+                <div class="service-card">
+                    <div class="service-icon">🛋️</div>
+                    <h3>Upholstery Cleaning</h3>
+                    <p>Gentle yet effective cleaning of furniture fabrics to eliminate dirt, stains, and odors, extending their lifespan.</p>
                 </div>
-                <h3>Upholstery Cleaning</h3>
-                <p>Gentle yet effective cleaning of furniture fabrics to eliminate dirt, stains, and odors, extending their lifespan.</p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <img src="https://atmosphereaircare.com/wp-content/uploads/2022/02/Clean-Air-Duct-Treatment-Atmosphere-Air-Care.jpg" alt="Kitchen Deep Cleaning">
-                    <span>Kitchen Deep Cleaning</span>
+                <div class="service-card">
+                    <div class="service-icon">🍳</div>
+                    <h3>Kitchen Deep Cleaning</h3>
+                    <p>Specialized cleaning of appliances, countertops, and cabinets to ensure a hygienic and sparkling kitchen environment.</p>
                 </div>
-                <h3>Kitchen Deep Cleaning</h3>
-                <p>Specialized cleaning of appliances, countertops, and cabinets to ensure a hygienic and sparkling kitchen environment.</p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <img src="https://espcleaning.sg/wp-content/uploads/unnamed-9-2.jpg" alt="Bathroom Sanitization">
-                    <span>Bathroom Sanitization</span>
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Bathroom Sanitization</h3>
+                    <p>Detailed cleaning and disinfection of tiles, fixtures, and surfaces for a fresh, germ-free bathroom.</p>
                 </div>
-                <h3>Bathroom Sanitization</h3>
-                <p>Detailed cleaning and disinfection of tiles, fixtures, and surfaces for a fresh, germ-free bathroom.</p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <img src="https://cdn.hibuwebsites.com/461ef7674a9847ab8ab8a557bcf7fc3a/dms3rep/multi/air-duct-care-video.jpg" alt="Move-In/Move-Out Cleaning">
-                    <span>Move-In/Move-Out Cleaning</span>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Move-In/Move-Out Cleaning</h3>
+                    <p>Complete cleaning services for homes before moving in or out, ensuring a pristine space for the next occupants.</p>
                 </div>
-                <h3>Move-In/Move-Out Cleaning</h3>
-                <p>Complete cleaning services for homes before moving in or out, ensuring a pristine space for the next occupants.</p>
             </div>
         </div>
     </section>
 
-    <section id="reviews">
-        <h2 class="section-title">Customer Reviews</h2>
-        <div class="reviews-grid">
-            <div class="review-card fade-in">
-                <div class="review-text">
-                    Outstanding service from Elaman Duct Care! They efficiently cleaned and sanitized all our vents, removing all dust and dirt. Their attention to detail was impressive. Highly recommend!
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Air Purifiers</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect fill='%23e0e0e0' width='200' height='200' rx='10'/><rect fill='%23667eea' x='30' y='30' width='140' height='140' rx='10'/><text x='100' y='100' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='14'>Dyson Purifier Cool</text></svg>" alt="Dyson Purifier Cool TP10">
+                    <h3>Dyson Purifier Cool TP10</h3>
+                    <p>HEPA H13 filter captures 99.97% of particles as small as 0.3 microns. Cools and purifies with Air Multiplier™ technology.</p>
+                    <div class="price">$549.99</div>
+                    <select name="color-tp10" class="product-option">
+                        <option value="white">White/Silver</option>
+                        <option value="black">Black/Nickel</option>
+                    </select>
+                    <button class="add-to-cart" data-product="Dyson Purifier Cool TP10" data-price="549.99">Add to Cart</button>
                 </div>
-                <div class="review-author">Sarah Johnson</div>
-                <div class="stars">★★★★★</div>
-            </div>
-            <div class="review-card fade-in">
-                <div class="review-text">
-                    Elaman Duct Care transformed our home! The deep cleaning was thorough, and the air ducts are spotless. Professional and eco-friendly service!
+                <div class="product-card">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect fill='%23e0e0e0' width='200' height='200' rx='10'/><rect fill='%23667eea' x='30' y='30' width='140' height='140' rx='10'/><text x='100' y='100' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='14'>Dyson Purifier Hot+Cool</text></svg>" alt="Dyson Purifier Hot+Cool">
+                    <h3>Dyson Purifier Hot+Cool Gen1</h3>
+                    <p>HEPA H13 filter, purifies, heats, and cools. Auto-senses pollutants and projects purified air up to 32ft.</p>
+                    <div class="price">$649.99</div>
+                    <select name="color-hotcool" class="product-option">
+                        <option value="white">White/Silver</option>
+                        <option value="black">Black/Nickel</option>
+                    </select>
+                    <button class="add-to-cart" data-product="Dyson Purifier Hot+Cool Gen1" data-price="649.99">Add to Cart</button>
                 </div>
-                <div class="review-author">Michael Lee</div>
-                <div class="stars">★★★★★</div>
-            </div>
-            <div class="review-card fade-in">
-                <div class="review-text">
-                    Amazing job on our carpets and upholstery! Elaman Duct Care left everything fresh and clean. Affordable and top-notch quality!
+                <div class="product-card">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect fill='%23e0e0e0' width='200' height='200' rx='10'/><rect fill='%23667eea' x='30' y='30' width='140' height='140' rx='10'/><text x='100' y='100' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='14'>Dyson Purifier Humidify+Cool</text></svg>" alt="Dyson Purifier Humidify+Cool">
+                    <h3>Dyson Purifier Humidify+Cool</h3>
+                    <p>HEPA H13 purifier, humidifier, and fan. Hygienically humidifies and captures 99.97% of pollutants.</p>
+                    <div class="price">$799.99</div>
+                    <select name="color-humidify" class="product-option">
+                        <option value="white">White/Silver</option>
+                        <option value="black">Black/Nickel</option>
+                    </select>
+                    <button class="add-to-cart" data-product="Dyson Purifier Humidify+Cool" data-price="799.99">Add to Cart</button>
                 </div>
-                <div class="review-author">Emily Carter</div>
-                <div class="stars">★★★★★</div>
+                <div class="product-card">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect fill='%23e0e0e0' width='200' height='200' rx='10'/><rect fill='%23667eea' x='30' y='30' width='140' height='140' rx='10'/><text x='100' y='100' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='14'>Austin Air HealthMate</text></svg>" alt="Austin Air HealthMate">
+                    <h3>Austin Air HealthMate</h3>
+                    <p>Medical-grade HEPA and activated carbon filter for pollen, dust, and odors. Covers up to 750 sq. ft.</p>
+                    <div class="price">$714.99</div>
+                    <select name="color-healthmate" class="product-option">
+                        <option value="sandstone">Sandstone</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                    </select>
+                    <button class="add-to-cart" data-product="Austin Air HealthMate" data-price="714.99">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect fill='%23e0e0e0' width='200' height='200' rx='10'/><rect fill='%23667eea' x='30' y='30' width='140' height='140' rx='10'/><text x='100' y='100' text-anchor='middle' fill='%23fff' font-family='Arial' font-size='14'>Austin Air HealthMate Plus</text></svg>" alt="Austin Air HealthMate Plus">
+                    <h3>Austin Air HealthMate Plus</h3>
+                    <p>Enhanced HEPA and carbon/zeolite filter with potassium iodide for VOCs and chemicals. Covers up to 750 sq. ft.</p>
+                    <div class="price">$854.99</div>
+                    <select name="color-healthmateplus" class="product-option">
+                        <option value="sandstone">Sandstone</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                    </select>
+                    <button class="add-to-cart" data-product="Austin Air HealthMate Plus" data-price="854.99">Add to Cart</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2 class="section-title">Book Now</h2>
-        <form class="contact-form fade-in">
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required>
+    <!-- Payment Section -->
+    <section id="payment" class="payment">
+        <div class="container">
+            <h2>Checkout</h2>
+            <div class="cart-summary">
+                <h3>Cart Summary</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
             </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="description">Description of Cleaning Job</label>
-                <textarea id="description" name="description" placeholder="Please describe your cleaning needs..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Request</button>
-        </form>
+            <form class="payment-form" id="paymentForm">
+                <h3>Payment Information</h3>
+                <div class="form-group">
+                    <label for="card-number">Card Number *</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">Name on Card *</label>
+                    <input type="text" id="card-name" name="card-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date *</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV *</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-address">Billing Address *</label>
+                    <textarea id="billing-address" name="billing-address" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Complete Purchase</button>
+            </form>
+        </div>
     </section>
 
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">Outstanding service from Ernesto Duct Care! They efficiently cleaned and sanitized all our vents, removing all dust and dirt. Their attention to detail was impressive. I definitely recommend them to anyone needing duct cleaning.</p>
+                    <p class="reviewer-name">- Maria Rodriguez</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">Absolutely fantastic cleaning service! My house has never looked better. The team was professional, punctual, and used eco-friendly products. Will definitely be using their services again!</p>
+                    <p class="reviewer-name">- James Thompson</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">Ernesto Duct Care exceeded all my expectations. They transformed my carpets and upholstery, making them look brand new. Highly professional and reasonably priced. Five stars!</p>
+                    <p class="reviewer-name">- Sarah Johnson</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Book Now</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Job Description *</label>
+                    <textarea id="description" name="description" placeholder="Please describe the cleaning services you need..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>Elaman Duct Care - Elaman LLC</p>
-        <p>12159 Hart St, North Hollywood, CA 91605</p>
+        <div class="container">
+            <p>© 2025 Ernesto Duct Care. All rights reserved. Professional cleaning services you can trust.</p>
+        </div>
     </footer>
 
     <script>
+        // Cart functionality
+        let cart = [];
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+
+            let total = 0;
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `<span>${item.name} (${item.color})</span><span>$${item.price}</span>`;
+                cartItems.appendChild(itemElement);
+                total += parseFloat(item.price);
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                const price = this.getAttribute('data-price');
+                const select = this.previousElementSibling;
+                const color = select.options[select.selectedIndex].text;
+
+                cart.push({
+                    name: productName,
+                    price: price,
+                    color: color
+                });
+
+                updateCart();
+                alert(`${productName} (${color}) added to cart!`);
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -659,7 +805,58 @@
             });
         });
 
-        // Fade in animation on scroll
+        // Contact form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            if (!data.name || !data.email || !data.phone || !data.description) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            alert('Thank you for your request! We will contact you within 24 hours to schedule your cleaning service.');
+            this.reset();
+        });
+
+        // Payment form submission handler
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            if (!data['card-number'] || !data['card-name'] || !data['expiry-date'] || !data.cvv || !data['billing-address']) {
+                alert('Please fill in all required payment fields.');
+                return;
+            }
+
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add products before checking out.');
+                return;
+            }
+            
+            alert('Thank you for your purchase! Your order has been processed.');
+            cart = [];
+            updateCart();
+            this.reset();
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -668,38 +865,18 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Form submission handling
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simulate form submission
-            alert('Thank you for your request! We will contact you within 24 hours to schedule your cleaning service.');
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
+        // Observe service cards, product cards, and review cards
+        document.querySelectorAll('.service-card, .product-card, .review-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
         });
     </script>
 </body>
